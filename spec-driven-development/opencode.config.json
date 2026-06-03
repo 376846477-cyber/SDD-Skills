@@ -1,0 +1,43 @@
+{
+  "skills": {
+    "sd-init": {
+      "path": "./sd-skills/sd-init/SKILL.md",
+      "enabled": true,
+      "triggers": ["init sd", "sd init", "初始化规范驱动开发", "初始化SD"]
+    },
+    "sd-spec": {
+      "path": "./sd-skills/sd-spec/SKILL.md",
+      "enabled": true,
+      "triggers": ["write spec", "create spec", "写规格", "创建规格", "写需求规格"],
+      "dependencies": ["sd-init"]
+    },
+    "sd-design": {
+      "path": "./sd-skills/sd-design/SKILL.md",
+      "enabled": true,
+      "triggers": ["write design", "create design", "写设计", "创建设计文档", "写技术设计"],
+      "dependencies": ["sd-spec"]
+    },
+    "sd-tasks": {
+      "path": "./sd-skills/sd-tasks/SKILL.md",
+      "enabled": true,
+      "triggers": ["generate tasks", "生成任务", "sd tasks", "生成实现任务"],
+      "dependencies": ["sd-spec", "sd-design"]
+    },
+    "sd-workflow": {
+      "path": "./sd-skills/sd-workflow/SKILL.md",
+      "enabled": true,
+      "triggers": ["sd workflow", "sd start", "开始SD开发", "规范驱动开发", "SD开发"]
+    }
+  },
+  "templates": {
+    "spec_template": "./sd-skills/templates/spec_template.md",
+    "design_template": "./sd-skills/templates/design_template.md",
+    "ears_format": "./sd-skills/templates/ears-format.md"
+  },
+  "defaults": {
+    "language": "zh-CN",
+    "spec_dir": ".sd/specs",
+    "feature_name_max_length": 10,
+    "feature_name_pattern": "^[a-z0-9_]{1,10}$"
+  }
+}
